@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/reg.css">
+  <title> New user </title>
+  <link rel="shortcut icon" href="img/icon.png" type="image/png">
+</head>
+
+<body>
+
+  <%- include('layouts/navbar'); -%>
+
+  <div class="regcontainer">
+
+    <h1>Create your account</h1>
+
+    <form id="register" action="/register/action" method="POST" class="input">
+      <input name="username" id="username" type="text" class="inputfield" placeholder="Username">
+      <input name="password" id="password" type="text" class="inputfield" placeholder="Password">
+      <!-- <input name= "password_confirm" id = "password_confirm" type="text" class = "inputfield" placeholder="Confirm password"> -->
+      <input type="checkbox" id="checkcond" name="checkbox" class="check-box">
+      <label for="checkbox">I agree with <a href="ReadMe.txt" style="color: rgb(74, 92, 110);">Terms &
+          Conditions</a></label>
+      <button class="submit" type="submit">Sign up!</button>
+    </form>
+
+    <div class="warning">
+      <% if(errors != null && errors.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+        <% for (var i = 0; i < errors.length;i++){ %>
+        <a class="alert-link"> <%= errors[i] %> </a>
+        <% } %>
+      </div>
+      <% } %>
+
+      <% if(errors.length == 0){ %>
+      <div class="alert alert-success" role="alert">
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script src="js/reg.js"></script>
+</body>
+
+</html>

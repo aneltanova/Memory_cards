@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/indexstyle.css">
+        <link rel="shortcut icon" href="img/icon.png" type="image/png">
+        <title>Memory cards</title>
+    </head>
+
+    <body>
+      <!-- <%- include('layouts/navbar'); -%> -->
+      <div class="navbar">
+        <ul>
+          <li><a href="reg.html">Log in</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a id="current" href="index.html">Deck</a></li>
+          <li><a href="about.html">Contact us</a></li>
+        </ul>   
+      </div> 
+
+      <div class = "container">
+        <p id = "p1" >Deck</p> 
+        <div class = "cardcontainer">
+          <div class = "card">
+              <div class = "front">
+                <p id = "front"></p>
+              </div>
+              <div class  = "back">
+                <p id = "back"></p>
+              </div>
+          </div>
+        </div>
+
+        <div id ="activeCardButtons">
+          <button id="prev" onclick="prevCard()"> Previous Card </button>
+          <button id="next" onclick="nextCard()"> Next Card </button>
+        </div>
+    </div>
+
+    <div class="containerform">   
+      <p id = "p1" >Add new card</p>       
+      <form id="cardForm">
+            <input id="newTerm" type="text" placeholder="Term" onKeyDown="if(event.keyCode==13) document.getElementById('newDef').focus()">
+            <input id="newDef" type="text" placeholder="Definition" onKeyDown="if(event.keyCode==13) cardAdd()">
+            <br>
+            <input id="submit" type="button" value="Add" onClick="cardAdd()">
+            <br>
+            <input id="clearDeck" type="button" value="Clear all" onClick="emptyDeck()">
+            <br>
+            <a id="activator" class="activator" onclick="slideIn()"> Click here to <b>Import & Export</b> decks of cards</a>
+      </form>
+    </div>
+
+    <div class="importExport">
+    
+      <div id="import"> 
+        <h2 style="text-align:center;">Import</h2>
+        <p style="text-align:center;"> choose a <code>.json</code> file with an array of cards</p>
+        <input id="uploadDeck" type="file"></input>
+        <button id="deckSubmit" onclick="upload_deck()">Choose a file</button>
+      
+       </div>
+    
+      <div id="export"> 
+        <a class="close" id="close" onclick="slideOut()"></a>
+        <h2 style="text-align:center;">Export</h2>
+        <p style="text-align:center;"> save a <code>.json</code> file containing the current deck</p>
+        <button id="saveDeck" onclick="download_deck()">Save this deck</button>
+      </div>
+   
+    </div>
+
+
+            
+          <script src="js/indexscripts.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </body>
+
+
+</html>
+
+
+

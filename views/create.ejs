@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/create.css">
+        <link rel="shortcut icon" href="img/icon.png" type="image/png">
+        <title>Create your deck</title>
+    </head>
+
+    <body>
+      
+      <%- include('layouts/navbar'); -%>
+      
+      <div class = "container">
+
+        <div class="deck">
+          <% for (var i = 0; i < cards.length; i++) { %>
+
+          <div class="card">
+            <h2 class="term">
+              <%= cards[i].term %>
+            </h2>
+                 <hr>
+            <h3 class="def">
+              <%= cards[i].body %>
+            </h3>
+            <p id = "dateposted" >You can't learn it since <%= cards[i].datePosted.toDateString() %> </p>
+          </div>
+
+          <% } %>
+        </div>
+
+    </div>
+
+
+    <!--                         ADD CARD                         -->
+
+    <div class="containerform">   
+      <p id = "p1" >Add new card</p>       
+      <form id="cardForm" method="POST" action='/cards/store'>
+            <input name="term" id="newTerm" type="text" placeholder="Term" onKeyDown="if(event.keyCode==13) ">
+            <input name="body" id="newDef" type="text" placeholder="Definition" onKeyDown="if(event.keyCode==13) ">
+            <br>
+            <button id = "submit" class="submit" type="submit">Add</button>
+            <br> 
+          </form>
+          <form id = "cardForm" method = "POST" action='/cards/remove''>
+            <button id="clearDeck" class="submit" type="submit" >Clear Deck</button>
+            <br>
+          </form>
+    </div>
+          <!-- <script src="js/indexscripts.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    </body>
+
+</html>
+

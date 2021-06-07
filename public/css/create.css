@@ -1,0 +1,148 @@
+body{
+  font-family: Consolas, Courier New, monospace;
+  overflow: hidden;
+  background-image: url("FlexBG.jpg"); 
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.container {
+  color: #0b161b; 
+  width: 700px;
+  height: 500px;
+  position: relative;
+  float: left;
+  margin: 3% auto;
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: rgb(240, 248, 255, 0.7);
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: 7px 7px 10px rgba(0,0,0,0.5);
+}
+
+
+.deck{
+  float: left;
+  margin: 10px;
+  width: 680px;
+  height: 500px;
+  overflow: scroll;
+  border-radius: 5px;
+}
+
+.card{
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: white;
+  height: 130px; 
+}
+
+
+.term{
+  font-size: 20px;
+  color: #b35824c2;
+}
+
+.def{
+  font-size: 15px;
+  color: #242323d2;
+} 
+
+#dateposted{
+  float: right;
+  /* font-size: 15px; */
+  color: #27242380;
+}
+
+
+/*=============   ADD   ==============*/
+
+.containerform {
+  color: #0b161b; 
+  float: right;
+  width: 700px;
+  height: 500px;
+  position: relative;
+  margin: 3% auto;
+  margin-top: 10px;
+  margin-right: 25px;
+  background-color: rgb(240, 248, 255, 0.8);
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: 7px 7px 10px rgba(0,0,0,0.5);
+}
+
+#p1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #212121; 
+  text-align: center;
+  font-weight: 700;
+}
+
+#cardForm {
+  position: relative;
+  margin-left:  120px;
+  width: auto;
+  height: auto;
+}
+
+input[type=button] {
+  border: none;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type=button]:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input[type=button]:active {
+  opacity: 0.5;
+}
+
+#submit, #clearDeck{
+  position:relative;
+  width:180px;
+  display:block;
+  width: 310px;
+  margin-left: 70px;
+  background: #F4734E;
+  border-radius: 5px;
+  color: white;
+}
+
+#newTerm, #newDef{
+  position:relative;
+  width: 300px;
+  height: 50px;
+  margin-top:15px;
+  margin-left: 70px;
+  display:block;
+  text-align: left;
+  padding-left: 10px;
+}
+
+button{
+  border: none;
+  color: white;
+  padding: 15px 28px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  opacity: 0.5;
+}

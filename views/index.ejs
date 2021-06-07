@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en " dir="ltr">
+
+<head>
+
+  <title> Profile </title>
+
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="shortcut icon" href="img/icon.png" type="image/png">
+
+</head>
+
+<body>
+
+  <%- include('layouts/navbar'); -%>
+
+  <div class="profcontainer">
+
+    <div class="usercontainer">
+      <img class="userphoto" src="<%= user.userimage %>">
+      <h2 class="username">Hello there, <b id="highlight"><%= user.username %></b></h2>
+      <h2 class="usercards">You need to learn: <b id="highlight"> <%= cards.length %> </b> cards</h2>
+      <button id="uploadbutton" onclick="slideIn()">Change your profile image</button>
+    </div>
+
+    <div class="upload">
+      <form method="POST" action="/index/update">
+        <a class="close" id="close" onclick="slideOut()"></a>
+        <label>Click and choose an image</label><br>
+        <input type="file" id="image" name="image">
+        <button type="submit"  id="send">Send</button>
+      </form>
+    </div>
+
+    <div class="deckcontainer">
+      <% for (var i = 0; i < cards.length; i++) { %>
+      <div class="cardcontainer">
+
+        <div class="card">
+          <div class="front">
+            <p id="front">
+              <%= cards[i].term %>
+            </p>
+          </div>
+          <div class="back">
+            <p id="back">
+              <%= cards[i].body %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <script src="/js/indexscripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+
+</html>
